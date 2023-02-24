@@ -8,13 +8,11 @@ public class Calculator {
     //нет проверки деления на ноль
     BinaryOperator<Integer> devide = (x, y) -> {
         int i;
-        try {
-            i = x / y;
-        } catch (ArithmeticException e) {
-            e.printStackTrace();
-            System.out.println("попытка деления на ноль");
-            return 0;
+        if (y == 0) {
+            System.out.println("Деление на ноль!");
+            System.exit(1);
         }
+        i = x / y;
         return i;
     };
     UnaryOperator<Integer> pow = x -> x * x;
