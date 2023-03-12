@@ -6,15 +6,7 @@ public class Calculator {
     BinaryOperator<Integer> minus = (x, y) -> x - y;
     BinaryOperator<Integer> multiply = (x, y) -> x * y;
     //нет проверки деления на ноль
-    BinaryOperator<Integer> devide = (x, y) -> {
-        int i;
-        if (y == 0) {
-            System.out.println("Деление на ноль!");
-            System.exit(1);
-        }
-        i = x / y;
-        return i;
-    };
+    BinaryOperator<Integer> devide = (x, y) -> y == 0 ? 0 : x / y;
     UnaryOperator<Integer> pow = x -> x * x;
     UnaryOperator<Integer> abs = x -> x > 0 ? x : x * -1;
     Predicate<Integer> isPositive = x -> x > 0;
